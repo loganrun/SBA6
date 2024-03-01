@@ -28,4 +28,19 @@ router.post('/', async (req,res) =>{
     }
 })
 
+router.patch('/:id', async (req,res) =>{
+    try {
+        const _id= req.params.id
+        const updates = req.body.title
+        //console.log(_id, updates)
+        const recipe = await Recipes.findByIdAndUpdate(_id,updates,{new:true});
+        await recipe.save();
+        res.json(recipe)
+    } catch (error) {
+        console.error(error);
+        res.status(500).send(error)
+        
+    }
+})
+
 module.exports = router;
