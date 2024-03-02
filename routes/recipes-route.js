@@ -37,7 +37,7 @@ router.patch('/:id', async (req,res) =>{
         await recipe.save();
         res.json(recipe)
     } catch (error) {
-        console.error(error);
+        // console.error(error);
         res.status(500).send(error)
         
     }
@@ -50,7 +50,7 @@ router.delete('/:id', async (req,res) =>{
         const recipe = await Recipes.findByIdAndDelete(_id);
         res.json(recipe)
     } catch (error) {
-        console.error(error);
+        // console.error(error);
         res.status(500).send(error)
         
     }
