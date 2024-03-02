@@ -3,8 +3,8 @@ const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 const dotenv= require('dotenv')
 const recipes = require('./routes/recipes-route')
-//const users = require('./routes/users')
-//const comments = require('./routes/comments')
+const users = require('./routes/users')
+const comments = require('./routes/comments')
 
 // const Recipes = require('./models/recipes-Model')
 // const recipes = require('./utilities/recipes')
@@ -33,8 +33,8 @@ db.once('open', () => {
 })
 
 //Routes
-//app.use('/api/users', users);
-//app.use('/api/comments', comments);
+app.use('/api/users', users);
+app.use('/api/comments', comments);
 app.use('/api/recipes', recipes);
 
 //seeed Routes
