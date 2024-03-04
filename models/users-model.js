@@ -13,6 +13,9 @@ const usersSchema = new mongoose.Schema({
         type: String,
         required: true
     }
+
 })
+
+usersSchema.index({ name: 1, type: -1 })
 
 module.exports = mongoose.model('Users', usersSchema);
