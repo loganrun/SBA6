@@ -6,7 +6,7 @@ router.get('/', async(req, res) => {
     try {
         //console.log('Users')
         const comment = await Comments.find();
-        res.json(Comments)
+        res.json(comment)
         
     } catch (error) {
         console.error(error);
